@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PostProcessor xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="0.9.8.0">
+  <PostFile>{$header}
+{$mops}
+{$footer}
+</PostFile>
+  <Header>&lt;HEADER&gt;
+{$comment} {$cbfile.name} {$date} {$endcomment}
+{$tooltable}
+{$cbfile.header}
+{$units} {$distancemode} {$velocitymode} {$cuttercomp(off)}
+{$toolchange(first)}
+{$clearance}
+&lt;/HEADER&gt;</Header>
+  <UnitsMM>&amp;</UnitsMM>
+  <UnitsInches>$</UnitsInches>
+  <PostBuildCommand>python</PostBuildCommand>
+  <PostBuildCommandArgs>--version</PostBuildCommandArgs>
+  <AddLineNumbers>true</AddLineNumbers>
+  <LineNumberFormat>0000</LineNumberFormat>
+  <LineNumberSkip>%O(:;#&lt;&amp;$</LineNumberSkip>
+</PostProcessor>
